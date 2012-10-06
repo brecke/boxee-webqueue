@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h2>Videos on your boxee watch later queue</h2>
+  
+  {% for video in videos %}
+    <div class="video_item">
+      <h3>
+        <a href="{{ video.url }}">{{ video.name }}</a>
+      </h3>
+      <a href="{{ video.url }}">
+        <img src="{{ video.thumb }}" class="video_thumb">
+      </a>
+      <p>
+        {{ video.description }} 
+      </p>
+    </div>
+  {% endfor %}
+{% endblock %}
