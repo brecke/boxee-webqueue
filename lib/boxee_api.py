@@ -21,7 +21,6 @@ class BoxeeAPI(object):
 
     """docstring for BoxeeAPI"""
     def __init__(self, username, password):
-        # super(BoxeeAPI, self).__init__()
         self.username = username
         self.password = password
         
@@ -41,7 +40,6 @@ class BoxeeAPI(object):
         pass
         
     def parse_videos(self, xml):
-        
         """docstring for parse_videos"""
         tree = etree.fromstring(xml)
         all_watchlater_messages = tree.getiterator(MESSAGE_ELEMENT)
@@ -49,19 +47,26 @@ class BoxeeAPI(object):
         
         for each_message in all_watchlater_messages:
             if each_message.get("source") == WATCH_LATER_ELEMENT:
-                each_object = each_message[2]
-                if each_object.get("type") == "stream_video":
-                    video = Video()
-                    # watch_later_videos.append(each_object)
-                    print "each object: ", each_object # before creating objects
-                    video.name = unicode(each_object[0].text)
-                    video.url = unicode(each_object[1].text)
-                    video.thumb = unicode(each_object[3].text)
-                    if len(each_object) >= 5:
-                        video.description = unicode(each_object[4].text)
-                    if len(each_object) >= 7:
-                        video.provider = unicode(each_object[6].text)
-                    # print "* [" +  video_name + "](" + video_url + ")"
-                    watch_later_videos.append(video)
+                for each_object in each_message.iterchildren('object'):
+                    if each_object.get("type") == "stream_video":
+                        video = Video()
+                        for element in each_object.iterchildren():
+                            if element.tag == "name":
+                                video.name = unicode(element.text)
+                                # print "video name: ", video.name
+                            if element.tag == "url":
+                                video.url = unicode(element.text)
+                                # print "video url: ", video.url
+                            if element.tag == "thumb":
+                                video.thumb = unicode(element.text)
+                                # print "video thumb: ", video.thumb
+                            if element.tag == "description":
+                                video.description = unicode(element.text)[:137]+"..."
+                                # print "video description: ", video.description
+                            if element.tag == "provider":
+                                video.provider = unicode(element.text)
+                                # print "video provider: ", video.provider
+                        
+                        watch_later_videos.append(video)
     	       
         return watch_later_videos

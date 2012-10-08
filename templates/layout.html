@@ -1,14 +1,35 @@
 <!doctype html>
-<title>Boxee watch later queue</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-
-<div class=page>
-  <h1>Boxee watch later queue</h1>
-  <div class=metanav>
-  
-  </div>
-  {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
-  {% endfor %}
-  {% block body %}{% endblock %}
-</div>
+<html>
+  <head>
+    <title>Boxee watch later queue</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='blocksit.min.js') }}"></script>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="http://www.boxee.tv/htdocs/images/favicon.ico" />
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+      
+      <!-- Content -->
+      <section id="wrapper">
+        <hgroup>
+          <h1>Boxee watch later queue</h1>
+        </hgroup>
+        
+        {% for message in get_flashed_messages() %}
+          <div class=flash>{{ message }}</div>
+        {% endfor %}
+        
+        {% block body %}{% endblock %}
+        
+      </section>
+    
+    <!-- Footer -->
+    <footer id="footer">
+      <span>Cenas usadas e ferramentas usadas e o raio bla bla bla link para o github</span>
+    </footer>
+  </body>
+</html>
