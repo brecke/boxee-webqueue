@@ -22,3 +22,7 @@ python boxee_app.py
 * Create a demo online (heroku maybe)
 * Style this a bit (comes with Flask demo css)
 * Dequeue video (feature)
+* Apply backbone.js to the queue page
+* On the queue page, make the title less prominent
+* Style the error / flash messages for invalid credentials error
+* Minify javascript and css files
