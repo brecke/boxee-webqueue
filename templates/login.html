@@ -1,24 +1,27 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <h2>Insert your boxee credentials</h2>
+  
   {% if error %}
   <p class=error>
-    <strong>Error:</strong> {{ error }}
+    <strong>{{ error }}</strong>
+  </p>
   {% endif %}
   
   <div id="form_holder">
     <form action="{{ url_for('login') }}" method=post>
-      <dl>
-        <dt>Username:
-        <dd>
-          <input type="text" name="username">
-        <dt>Password:
-        <dd>
-          <input type="password" name="password">
-        <dd>
+      <ul>
+        <li>
+          <input type="text" name="username" placeholder="boxee username">
+        </li>
+        <li>
+          <input type="password" name="password" placeholder="boxee password">
+        </li>
+        <li>
           <input type="submit" value="Login">
-      </dl>
+        </li>
+      </ul>
+        
     </form>
   </div>
 {% endblock %}

@@ -48,20 +48,29 @@
 
 {% block body %}
   
-  <h2>Videos on your boxee watch later queue</h2>
-  
   <div id="container">
   {% for video in videos %}
     <div class="grid">
+    
+      <div class="actions">
+        <div>
+          <a href="#">
+            <img src="/static/images/trash.png">
+          </a>
+        </div>
+      </div>
+    
       <div class="imgholder">
         <a href="{{ video.url }}">
           <img src="{{ video.thumb }}" />          
         </a>
       </div> <!-- end of imgholder -->
+      
       <strong>
         <a href=" {{ video.url }} ">{{ video.name }}</a>
       </strong>
       <p>{{ video.description }}</p>
+      
       <div class="meta">{{ video.provider }}</div>
     </div> <!-- end of grid -->
   {% endfor %}
