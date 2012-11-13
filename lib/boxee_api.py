@@ -66,6 +66,8 @@ class BoxeeAPI(object):
                             if element.tag == "provider":
                                 video.provider = unicode(element.text)
                                 # print "video provider: ", video.provider
+                            else:
+                                video.provider = "Unknown"
                         
                         watch_later_videos.append(video)
     	       
