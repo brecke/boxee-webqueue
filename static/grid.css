@@ -1,0 +1,62 @@
+.grid {
+  width:188px;
+  min-height:100px;
+  padding: 15px;
+  background:#fff;
+  margin:8px;
+  font-size:12px;
+  float:left;
+  box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+  -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+  -webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+}
+
+.grid:hover {
+  box-shadow: 0 2px 4px rgba(39,30,30,5.4);
+  -moz-box-shadow: 0 2px 4px rgba(39,30,30,5.4);
+  -webkit-box-shadow: 0 2px 4px rgba(39,30,30,5.4);
+}
+
+.grid strong {
+  border-bottom:1px solid #ccc;
+  margin:10px 0;
+  display:block;
+  padding:0 0 5px;
+  font-size:17px;
+}
+
+.grid .meta{
+  text-align:right;
+  color:#777;
+  font-style:italic;
+}
+
+.grid .imgholder img {
+  max-width:100%;
+  background:#ccc;
+  display:block;
+}
+
+.grid .actions {
+  position:absolute;
+  opacity:0;
+  -webkit-transition:opacity 0.1s ease-in-out;
+  -moz-transition:opacity 0.1s ease-in-out;
+  -o-transition:opacity 0.1s ease-in-out;
+  transition:opacity 0.1s ease-in-out;
+  right:10px;
+}
+
+.grid:hover .actions {
+  opacity:1;
+}
+
+.grid .actions > div {
+  padding: 0px 0px 0px 0px;
+  /* padding: top right bottom left; */
+  background-color: white;
+}
+
+.grid .actions img {
+  opacity:0.7;
+}
