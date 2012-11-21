@@ -1,27 +1,38 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  
-  {% if error %}
-  <p class=error>
-    <strong>{{ error }}</strong>
-  </p>
-  {% endif %}
-  
-  <div id="form_holder">
-    <form action="{{ url_for('login') }}" method=post>
-      <ul>
-        <li>
-          <input type="text" name="username" placeholder="boxee username">
-        </li>
-        <li>
-          <input type="password" name="password" placeholder="boxee password">
-        </li>
-        <li>
-          <input type="submit" value="Login">
-        </li>
-      </ul>
-        
-    </form>
+
+  <!-- Content -->
+  <div class="row" id="login_container">
+    <div class="eight columns centered ">
+      <div class="panel">
+
+        <h1>Your boxee watch later queue, <em>online</em>.</h1>
+
+        {% if error %}
+          <p class=error>
+            <strong>{{ error }}</strong>
+          </p>
+        {% endif %}
+
+        <div id="form_holder">
+          <form action="{{ url_for('login') }}" method=post>
+            <ul>
+              <li>
+                <input type="text" name="username" placeholder="boxee username">
+              </li>
+              <li>
+                <input type="password" name="password" placeholder="boxee password">
+              </li>
+              <li>
+                <input type="submit" value="Go">
+              </li>
+            </ul>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
   </div>
 {% endblock %}

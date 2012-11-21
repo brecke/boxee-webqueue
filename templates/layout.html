@@ -4,57 +4,45 @@
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html class="no-js" lang="en"> 
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
 <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
-    
+
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
-    
+
     <title>Boxee watch later queue</title>
-    
+
     <!-- Included CSS Files (Compressed) -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='foundation.min.css') }}"> -->
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='foundation.min.css') }}">
+
     <!-- Application specific uncompressed files -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='grid.css') }}">
     <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Give+You+Glory'>
-    
+
     <!-- Application specific files -->
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='modernizr.foundation.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='blocksit.min.js') }}"></script>
-    
+
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
+
     <!-- favicon image -->
     <link rel="shortcut icon" href="http://www.boxee.tv/htdocs/images/favicon.ico" />
-    
+
     {% block head %}{% endblock %}
   </head>
   <body>
-  
+
     <a href="https://github.com/brecke/boxee-webqueue"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
-      
-      <!-- Content -->
-      
-      <section id="wrapper">
-        <hgroup>
-          <h1>Your boxee watch later queue, <em>online</em>.</h1>
-        </hgroup>
-        
-        {% for message in get_flashed_messages() %}
-          <div class=flash>{{ message }}</div>
-        {% endfor %}
-        
-        {% block body %}{% endblock %}
-        
-      </section>
-    
-    
+
+    {% block body %}{% endblock %}
+
+
   </body>
 </html>
