@@ -88,6 +88,9 @@ div#form_holder input[type="text"], div#form_holder input[type="password"] {
   border: 5px solid white;
 }
 
+::-webkit-input-placeholder { color: #4c4b4c; }
+input:-moz-placeholder { color: #4c4b4c; }
+
 div#form_holder input[type="submit"] {
   margin-top: 10px;
   border: none;
