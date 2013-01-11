@@ -21,5 +21,6 @@ python boxee_app.py
 * Create a demo online (heroku maybe)
 * Dequeue video (feature)
 * Apply backbone.js to the queue page
+  * RESTful API using [Flask-restful](http://flask-restful.readthedocs.org)
 * Style the error / flash messages for invalid credentials error
 * Minify javascript and css files
