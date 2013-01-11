@@ -8,13 +8,13 @@
     $(window).load( function() {
       $('#container').BlocksIt({
         numOfCol: 5,
-        offsetX: 8,
+        offsetX: 5,
         offsetY: 8
       });
     });
 
     //window resize
-    var currentWidth = 1140;
+    var currentWidth = 1100;
     $(window).resize(function() {
       var winWidth = $(window).width();
       var conWidth;
@@ -53,7 +53,7 @@
         <h1>There you go, <em>enjoy.</em>.</h1>
       </div>
 
-      <div id="container" class="">
+      <div id="container">
       {% for video in videos %}
         <div class="grid">
           <div class="actions">
